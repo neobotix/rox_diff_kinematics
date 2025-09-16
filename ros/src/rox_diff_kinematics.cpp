@@ -43,8 +43,8 @@
 #include <nav_msgs/msg/odometry.hpp>
 #include <neo_msgs2/msg/kinematics_state.hpp>
 
-#include "tf2_ros/buffer.h"
-#include "tf2_ros/transform_broadcaster.h"
+#include "tf2_ros/buffer.hpp"
+#include "tf2_ros/transform_broadcaster.hpp"
 
 using std::placeholders::_1;
 
