@@ -59,13 +59,13 @@ public:
   {
     topicPub_Odometry = this->create_publisher<nav_msgs::msg::Odometry>("odom", 1000);
     topicPub_DriveCommands = this->create_publisher<trajectory_msgs::msg::JointTrajectory>(
-      "joint_trajectory",
+      "drive/joint_trajectory",
       1000);
     topicSub_ComVel = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel",
       1,
       std::bind(&PlatformCtrlNode::receiveCmd, this, _1));
     topicSub_DriveState = this->create_subscription<sensor_msgs::msg::JointState>(
-      "joint_states",
+      "drive/joint_states",
       10,
       std::bind(&PlatformCtrlNode::receiveOdo, this, _1));
     topicPub_KinematicsState = this->create_publisher<neo_msgs2::msg::KinematicsState>(
